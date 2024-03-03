@@ -4,7 +4,7 @@ from sqlite3 import Error
 from flask_bcrypt import Bcrypt
 
 DATABASE = "C:/Users/GGPC/PycharmProjects/HomeworkSite/homework.db" # Desktop
-# DATABASE = "C:/Users/ethan/PycharmProjects/SmileCafe/smile.db"  # Laptop
+# DATABASE = "C:/Users/ethan/PycharmProjects/HomeworkSite/homework.db"  # Laptop
 
 app = Flask(__name__)
 
@@ -18,7 +18,12 @@ def create_connection(db_file):
     return None
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/')
+def render_home():
+    return render_template('home.html')
+
+
+@app.route('/login', methods=['POST', 'GET'])
 def render_login():
     return render_template('login.html')
 
@@ -52,14 +57,14 @@ def render_signup():
         con.commit()
         con.close()
 
-        return redirect('/')
+        return redirect('/login')
 
     return render_template('signup.html')
 
-# Sign in for student and teacher (first name, last name, role, email, id number)
+# Sign in for student and teacher
 # Students should have a page with only their homework where they can submit homework
 # Only teachers can view all students homework
-# Only teachers should be able to add, remove and mark work (id, title, description, time, student id, work, isdone, mark)
+# Only teachers should be able to add, remove and mark work
 
 
 if __name__ == '__main__':
