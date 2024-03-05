@@ -3,5 +3,18 @@
 {% block pageheading %}Welcome{% endblock %}
 
 {% block main %}
-    <p>You are not logged in! Please <a href="/login">log in</a>.</p>
+    <br>
+    {% if logged_in %}
+        <p>You are logged in! <a href="/logout">Log out</a>.</p>
+    {% else %}
+        <p>You are not logged in! Please <a href="/login">log in</a>.</p>
+    {% endif %}
+
+    <br><br>
+
+    {% if role == 'Teacher' %}
+        <a href="/view">View work</a>
+    {% elif role == 'Student' %}
+        <a href="/submit">Submit work</a>
+    {% endif %}
 {% endblock %}
