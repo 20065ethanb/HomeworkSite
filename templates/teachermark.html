@@ -1,11 +1,14 @@
-{% extends "teachermark.html" %}
+{% extends "base.html" %}
 
 {% block pageheading %}Teacher marking{% endblock %}
 
 {% block main %}
-<form class="myform" method="POST">
-    <div>
-
-    </div>
-</form>
+    {% for work in homework %}
+        <h3>{{ work[1] }}</h3>
+        <p>by {{ work[3] }}</p>
+        <p>{{ work[2] }}</p>
+        <p>{{ work[4] }}</p>
+        <a href="/remove/{{ work[0] }}">Remove</a>
+        <br><br>
+    {% endfor %}
 {% endblock %}

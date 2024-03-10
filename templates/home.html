@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block pageheading %}Welcome{% endblock %}
+{% block pageheading %}Welcome{% if logged_in %} {{ user_info.get('firstname') }} {{ user_info.get('lastname') }}!{% endif %}{% endblock %}
 
 {% block main %}
     <br>
@@ -11,10 +11,11 @@
     {% endif %}
 
     <br><br>
-
-    {% if role == 'Teacher' %}
-        <a href="/view">View work</a>
-    {% elif role == 'Student' %}
-        <a href="/submit">Submit work</a>
+    {% if logged_in %}
+        {% if user_info.get('role') == 'Teacher' %}
+            <a href="/view">View work</a>
+        {% elif user_info.get('role') == 'Student' %}
+            <a href="/submit">Submit work</a>
+        {% endif %}
     {% endif %}
 {% endblock %}

@@ -28,12 +28,17 @@
         <div class="form-element"><input type="password" name="password2" id="password2" required></div>
     </div>
     <div class="form-group">
-        <div class="form-label"></div>
-        <div class="form-element"><input type="submit" name="signup" id="signup" value="Signup Student"></div>
+        <div class="form-label">Role:</div>
+        <div class="form-element">
+            <select name="role" id="role" required>
+                <option value="Student">Student</option>
+                <option value="Teacher">Teacher</option>
+            </select>
+        </div>
     </div>
     <div class="form-group">
         <div class="form-label"></div>
-        <div class="form-element"><input type="submit" name="signup" id="signup" value="Signup Teacher"></div>
+        <div class="form-element"><input type="submit" name="signup" id="signup" value="Signup"></div>
     </div>
 </form>
 {% endblock %}
