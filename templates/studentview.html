@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block pageheading %}Your work{% endblock %}
+
+{% block main %}
+    {% for work in homework %}
+        <h3>{{ work[1] }}</h3>
+        <p>{{ work[2] }}</p>
+        <p>{{ work[4] }}</p>
+        {% if work[5] == None %}
+            <p>Work not marked</p>
+        {% else %}
+            <p>{{ work[5] }} / 10</p>
+        {% endif %}
+        <br><br>
+    {% endfor %}
+{% endblock %}

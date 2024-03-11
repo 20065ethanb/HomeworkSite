@@ -4,17 +4,8 @@
 
 {% block main %}
 <form class="myform" method="POST">
-    <div class="form-group">
-        <div class="form-label">Title:</div>
-        <div class="form-element"><input type="text" name="title" id="title" required maxlength="20"></div>
-    </div>
-    <div class="form-group">
-        <div class="form-label">Details:</div>
-        <div class="form-element"><input type="text" name="detail" id="detail" required maxlength="500"></div>
-    </div>
-    <div class="form-group">
-        <div class="form-level"></div>
-        <div class="form-element"><input type="submit" value="Submit Work"></div>
-    </div>
+    <div>Title:</div><div><input type="text" name="title" id="title" required maxlength="20"></div>
+    <div>Details:</div><div><input type="text" name="detail" id="detail" required maxlength="500"></div>
+    <div><input type="submit" value="Submit Work"></div>
 </form>
 {% endblock %}

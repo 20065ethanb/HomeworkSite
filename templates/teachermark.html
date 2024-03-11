@@ -8,6 +8,9 @@
         <p>by {{ work[3] }}</p>
         <p>{{ work[2] }}</p>
         <p>{{ work[4] }}</p>
+        <form method="POST">
+            Score: <input type="number" name="score{{ work[0] }}" id="score{{ work[0] }}" value="{{ work[5] }}" min="0" max="10"> <input type="submit" value="Mark Work">
+        </form>
         <a href="/remove/{{ work[0] }}">Remove</a>
         <br><br>
     {% endfor %}

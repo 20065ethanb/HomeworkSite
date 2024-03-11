@@ -13,9 +13,10 @@
     <br><br>
     {% if logged_in %}
         {% if user_info.get('role') == 'Teacher' %}
-            <a href="/view">View work</a>
+            <a href="/mark">Mark work</a>
         {% elif user_info.get('role') == 'Student' %}
-            <a href="/submit">Submit work</a>
+            <div><a href="/view/{{ user_info.get('user_id') }}">View work</a></div>
+            <div><a href="/submit">Submit work</a></div>
         {% endif %}
     {% endif %}
 {% endblock %}
